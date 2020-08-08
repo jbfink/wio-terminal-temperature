@@ -1,6 +1,8 @@
 #include <Arduino.h>
 // Demo code for Grove - Temperature Sensor V1.1/1.2
 // Loovee @ 2015-8-26
+// note that the temperature sensor must be plugged into the right-hand Grove port.
+
 #include"TFT_eSPI.h"
 #include"Free_Fonts.h"
 #include <math.h>
@@ -43,5 +45,6 @@ void loop()
     Serial.print("temperature = ");
     Serial.println(temperature);
     tft.drawNumber(temperature,70,80);
+    // for some reason drawFloat doesn't work even though it is a float????
     delay(1000);
 }
