@@ -4,7 +4,9 @@
 #include"TFT_eSPI.h"
 #include"Free_Fonts.h"
 #include <math.h>
- 
+#define LCD_BACKLIGHT (72Ul) // Control Pin of LCD
+TFT_eSPI tft;
+
 const int B = 4275;               // B value of the thermistor
 const int R0 = 100000;            // R0 = 100k
 const int pinTempSensor = A0;     // Grove - Temperature Sensor connect to A0
@@ -16,14 +18,21 @@ const int pinTempSensor = A0;     // Grove - Temperature Sensor connect to A0
 #else
 #define debug  Serial
 #endif
- 
+float number; 
 void setup()
 {
     Serial.begin(9600);
+  pinMode(WIO_5S_PRESS, INPUT_PULLUP);
+  tft.begin();
+  tft.setRotation(3);
+  tft.fillScreen(TFT_BLACK); //Black background   
+  number = 5.12;
 }
+
  
 void loop()
 {
+    tft.setFreeFont(FF10); //select Free, Mono, Oblique, 12pt.
     int a = analogRead(pinTempSensor);
  
     float R = 1023.0/a-1.0;
@@ -33,6 +42,6 @@ void loop()
  
     Serial.print("temperature = ");
     Serial.println(temperature);
- 
+    tft.drawNumber(temperature,70,80);
     delay(1000);
 }
