@@ -1,7 +1,7 @@
 #include <Arduino.h>
 // Demo code for Grove - Temperature Sensor V1.1/1.2
 // Loovee @ 2015-8-26
-// note that the temperature sensor must be plugged into the right-hand Grove port.
+// note that the temperature sensor must be plugged into the right-hand Grove port on the Wio Terminal.
 
 #include"TFT_eSPI.h"
 #include"Free_Fonts.h"
