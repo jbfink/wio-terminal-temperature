@@ -30,7 +30,8 @@ void setup()
     pinMode(WIO_5S_PRESS, INPUT_PULLUP);
     tft.begin();
     tft.setRotation(3);
-    tft.fillScreen(TFT_BLACK); //Black background   
+    spr.createSprite(TFT_HEIGHT, TFT_WIDTH);
+    //tft.fillScreen(TFT_BLACK); //Black background   
 }
 
 
@@ -50,7 +51,7 @@ void loop()
 
     //Settings for the line graph title
     auto header =  text(0, 0)
-        .value("test")
+        .value("temp in C")
         .align(center)
         .valign(vcenter)
         .width(tft.width())
@@ -72,5 +73,6 @@ void loop()
 
     spr.pushSprite(0, 0);
     delay(1000);
+    //delay(600000);
 
 }
