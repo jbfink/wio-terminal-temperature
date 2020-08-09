@@ -72,7 +72,7 @@ void loop()
         .draw();
 
     spr.pushSprite(0, 0);
-    delay(1000);
-    //delay(600000);
+    //delay(1000);
+    delay(600000);
 
 }
