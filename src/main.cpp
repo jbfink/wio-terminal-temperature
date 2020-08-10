@@ -30,7 +30,6 @@ void setup()
     tft.begin();
     tft.setRotation(3);
     spr.createSprite(TFT_HEIGHT, TFT_WIDTH);
-    //tft.fillScreen(TFT_BLACK); //Black background   
 }
 
 
@@ -64,14 +63,13 @@ void loop()
     content
         .height(tft.height() - header.height() * 1.5) //actual height of the line chart
         .width(tft.width() - content.x() * 2) //actual width of the line chart
-        .based_on(15.0) //Starting point of y-axis, must be a float
+        .based_on(15.0) //Starting point of y-axis, must be a float. Set to 15C in summer. :D
         .show_circle(true) //drawing a cirle at each point, default is on.
         .value(data) //passing through the data to line graph
         .color(TFT_PURPLE) //Setting the color for the line
         .draw();
 
     spr.pushSprite(0, 0);
-    //delay(1000);
-    delay(60000);
+    delay(600000); // 10 minute delay
 
 }
