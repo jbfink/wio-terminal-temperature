@@ -9,7 +9,7 @@
 #define LCD_BACKLIGHT (72Ul) // Control Pin of LCD
 TFT_eSPI tft;
 #define max_size 50 //maximum size of data
-doubles data; //Initialigit pushsing a doubles type to store data
+doubles data; // initialising a doubles type to store data
 TFT_eSprite spr = TFT_eSprite(&tft);  // Sprite 
 
 const int B = 4275;               // B value of the thermistor
