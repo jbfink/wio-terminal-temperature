@@ -1,11 +1,14 @@
 #include <Arduino.h>
+#include <seeed_graphics_base.h>
+#include <seeed_line_chart.h>
+#include <seeed_graphics_define.h>
 // Code adapted from Seeed's Grove Temperature Demo (https://wiki.seeedstudio.com/Grove-Temperature_Sensor_V1.2/) and Linechart (https://github.com/Seeed-Studio/Seeed_Arduino_Linechart)
 
 // note that the temperature sensor must be plugged into the right-hand Grove port on the Wio Terminal.
 
 #include"TFT_eSPI.h"
 #include <math.h>
-#include"seeed_line_chart.h" 
+//#include"seeed_line_chart.h" 
 #define LCD_BACKLIGHT (72Ul) // Control Pin of LCD
 TFT_eSPI tft;
 #define max_size 50 //maximum size of data
