@@ -9,20 +9,13 @@
 #define LCD_BACKLIGHT (72Ul) // Control Pin of LCD
 TFT_eSPI tft;
 #define max_size 50 //maximum size of data
-doubles data; //Initilising a doubles type to store data
+doubles data; //Initialigit pushsing a doubles type to store data
 TFT_eSprite spr = TFT_eSprite(&tft);  // Sprite 
 
 const int B = 4275;               // B value of the thermistor
 const int R0 = 100000;            // R0 = 100k
 const int pinTempSensor = A0;     // Grove - Temperature Sensor connect to A0
 
-#if defined(ARDUINO_ARCH_AVR)
-#define debug  Serial
-#elif defined(ARDUINO_ARCH_SAMD) ||  defined(ARDUINO_ARCH_SAM)
-#define debug  SerialUSB
-#else
-#define debug  Serial
-#endif
 
 // For non-blocking delay: https://dzone.com/articles/arduino-using-millis-instead-of-delay
 int period = 600000;
@@ -32,7 +25,6 @@ unsigned long time_now = 0;
 
 void setup()
 {
-    Serial.begin(9600);
     pinMode(WIO_5S_PRESS, INPUT_PULLUP);
     tft.begin();
     tft.setRotation(3);
