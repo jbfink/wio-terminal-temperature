@@ -25,7 +25,7 @@ const int pinTempSensor = A0;     // Grove - Temperature Sensor connect to A0
 #endif
 
 // For non-blocking delay: https://dzone.com/articles/arduino-using-millis-instead-of-delay
-int period = 300000;
+int period = 600000;
 unsigned long time_now = 0;
 
 
@@ -90,5 +90,5 @@ void loop()
             digitalWrite(LCD_BACKLIGHT, LOW);
         }
     }
-    delay(100);
+    delay(100); // for debouncing
 }
