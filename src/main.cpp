@@ -1,10 +1,9 @@
 #include <Arduino.h>
-// Demo code for Grove - Temperature Sensor V1.1/1.2
-// Loovee @ 2015-8-26
+// Code adapted from Seeed's Grove Temperature Demo (https://wiki.seeedstudio.com/Grove-Temperature_Sensor_V1.2/) and Linechart (https://github.com/Seeed-Studio/Seeed_Arduino_Linechart)
+ 
 // note that the temperature sensor must be plugged into the right-hand Grove port on the Wio Terminal.
 
 #include"TFT_eSPI.h"
-#include"Free_Fonts.h"
 #include <math.h>
 #include"seeed_line_chart.h" 
 #define LCD_BACKLIGHT (72Ul) // Control Pin of LCD
@@ -65,14 +64,14 @@ void loop()
     content
         .height(tft.height() - header.height() * 1.5) //actual height of the line chart
         .width(tft.width() - content.x() * 2) //actual width of the line chart
-        .based_on(0.0) //Starting point of y-axis, must be a float
-        .show_circle(false) //drawing a cirle at each point, default is on.
+        .based_on(15.0) //Starting point of y-axis, must be a float
+        .show_circle(true) //drawing a cirle at each point, default is on.
         .value(data) //passing through the data to line graph
         .color(TFT_PURPLE) //Setting the color for the line
         .draw();
 
     spr.pushSprite(0, 0);
     //delay(1000);
-    delay(600000);
+    delay(60000);
 
 }
