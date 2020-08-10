@@ -10,6 +10,6 @@ Things to do or fix:
 2) Wio Terminal has an SD card slot; maybe at the same time that the graph is drawn also write to the card with the elapsed time and temperature.
 3) There's *also* built-in Wifi (man, what does the Terminal *not* have? Seriously, this is a great little device) so perhaps use an NTP client to make proper timestamps for the SD log.
 4) The Wio Terminal supports [CircuitPython](https://circuitpython.org/board/seeeduino_wio_terminal/)(!!!!!) so maybe reimplement this in CircuitPython sometime.
-5) ~~~An [Arduino IDE](https://www.arduino.cc/en/Main/Software) specific version.~~~ Done! In the arduino-ide directory.
+5) ~~An [Arduino IDE](https://www.arduino.cc/en/Main/Software) specific version.~~ Done! In the arduino-ide directory.
 
 This uses a fair chunk of sample code for the temperature sensor and the line graph - thanks to Seeed for the easy-to-use demos. Everything written by me is licensed under the [MIT License](https://en.wikipedia.org/wiki/MIT_License). Please see LICENSE for details.
