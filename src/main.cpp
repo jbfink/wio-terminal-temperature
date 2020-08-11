@@ -20,8 +20,7 @@ const int pinTempSensor = A0;     // Grove - Temperature Sensor connect to A0
 
 
 // For non-blocking delay: https://dzone.com/articles/arduino-using-millis-instead-of-delay
-//int period = 600000;
-int period = 1000;
+int period = 600000;
 unsigned long time_now = 0;
 
 void displayTemp() {
@@ -87,6 +86,9 @@ void loop()
         else if (currentState == 1) {
             digitalWrite(LCD_BACKLIGHT, LOW);
         }
+    }
+    if (digitalRead(WIO_KEY_C) == LOW) {
+        displayTemp();
     }
     delay(100); // for debouncing
 }
